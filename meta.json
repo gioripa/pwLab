@@ -1,11 +1,10 @@
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Lecture 12: Graphs, networks, incidence matrices",
-    "description": "These video lectures of Professor Gilbert Strang teaching 18.06 were recorded in Fall 1999 and do not correspond precisely to the current  edition of the textbook.",
+    "name": "Meteo",
+    "description": "Guarda il meteo della tua zona",
     "publisher": {
-        "@type": "CollegeOrUniversity",
-        "name": "MIT OpenCourseWare"
-    },
-    "license": "http://creativecommons.org/licenses/by-nc-sa/3.0/us/deed.en_US"
+        "@type": "Author",
+        "name": "Gioripa"
+    }
 }
