@@ -14,9 +14,6 @@ function darkMode(){
     element.className = element.className.replace(/-light/g, "-dark");
     });
     document.body.classList.add("bg-dark");
-    var btn= document.getElementById('divDark');
-    btn.style.color= 'white';
-    btn.style.backgroundColor='black';
 }
 
 function lightMode(){
@@ -26,7 +23,4 @@ function lightMode(){
     element.className = element.className.replace(/-dark/g, "-light");
     });
     document.body.classList.add("bg-light");
-    var btn= document.getElementById('divDark');
-    btn.style.color= 'white';
-    btn.style.backgroundColor='black';
 }
