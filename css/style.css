@@ -1,0 +1,10 @@
+.carousel-img{
+    height: 400px;
+}
+
+#divDark{
+    bottom:1rem;
+    left:1rem;
+    color:white;
+    background: black;
+}
