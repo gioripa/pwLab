@@ -14,6 +14,7 @@ function darkMode(){
     element.className = element.className.replace(/-light/g, "-dark");
     });
     document.body.classList.add("bg-dark");
+    document.body.classList.add("text-white");
 }
 
 function lightMode(){
@@ -23,4 +24,5 @@ function lightMode(){
     element.className = element.className.replace(/-dark/g, "-light");
     });
     document.body.classList.add("bg-light");
+    document.body.classList.replace("text-white","text-black");
 }
