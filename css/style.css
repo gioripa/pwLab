@@ -1,8 +1,18 @@
 .carousel-img{
-    height: 400px;
+    height: 500px;
 }
 
 #divDark{
     bottom:1rem;
     left:1rem;
+}
+
+.icon-img{
+    height: 150px;
+    width: 200px;
+}
+
+#divCities{
+    margin-top:30px;
+    margin-left:50px;
 }
