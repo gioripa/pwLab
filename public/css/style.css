@@ -1,5 +1,5 @@
 .carousel-img{
-    height: 500px;
+    height: 700px;
 }
 
 #divDark{
@@ -14,5 +14,5 @@
 
 #divCities{
     margin-top:30px;
-    margin-left:50px;
+    text-align: center;
 }
