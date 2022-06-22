@@ -1,5 +1,5 @@
 .carousel-img{
-    height: 700px;
+    height: 900px;
 }
 
 #divDark{
@@ -13,6 +13,23 @@
 }
 
 #divCities{
-    margin-top:30px;
+    margin-top:7%;
+    text-align: center;
+}
+
+.pIcon{
+    margin-top:5%;
+}
+
+.icon{
+    height: 10%;
+    width: 10%;
+}
+
+.temp{
+    
+}
+
+#currentPos{
     text-align: center;
 }

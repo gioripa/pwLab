@@ -11,7 +11,7 @@ const getWeatherInfo = async (latitude, longitude) => {
     try {
         const url = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&appid=' + API + '&units=metric';
         const response = await request(url);
-        //console.log(response);
+        return response;
     } catch (err) {
         console.log(err);
     }
@@ -21,21 +21,29 @@ const getCityInfo = async (name) => {
     try {
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${name},it&appid=${API}&units=metric&lang=it`;
         const response = await request(url);
-        console.log(response);
-        document.getElementById(`${name}-temp`).innerText = response.main.temp;
-        document.getElementById(`${name}-icon`).src='http://openweathermap.org/img/wn/'+response.weather[0].icon+'@2x.png' ;
+        return response;
     } catch (err) {
         console.log(err);
     }
 };
 
-
-document.addEventListener('DOMContentLoaded', () => {
-    navigator.geolocation.getCurrentPosition(position => {
+document.addEventListener('DOMContentLoaded', async () => {
+    navigator.geolocation.getCurrentPosition(async position => {
         const { latitude, longitude } = position.coords;
-        getWeatherInfo(latitude, longitude);
+        var x = await getWeatherInfo(latitude, longitude);
+        var name= x.name;
+        document.getElementById("pos").innerText += " "+name;
+        console.log(x);
     })
-    getCityInfo('Roma');
-    getCityInfo('Torino');
-    getCityInfo('Milano');
+    var response = await getCityInfo('Roma');
+    document.getElementById(`Roma-temp`).innerText = response.main.temp;
+    document.getElementById(`Roma-icon`).src='http://openweathermap.org/img/wn/'+response.weather[0].icon+'@2x.png' ;
+    
+    response = await getCityInfo('Torino');
+    document.getElementById(`Torino-temp`).innerText = response.main.temp;
+    document.getElementById(`Torino-icon`).src='http://openweathermap.org/img/wn/'+response.weather[0].icon+'@2x.png' ;
+    
+    response = await getCityInfo('Milano');
+    document.getElementById(`Milano-temp`).innerText = response.main.temp;
+    document.getElementById(`Milano-icon`).src='http://openweathermap.org/img/wn/'+response.weather[0].icon+'@2x.png' ;
 });
