@@ -33,17 +33,18 @@ document.addEventListener('DOMContentLoaded', async () => {
         var x = await getWeatherInfo(latitude, longitude);
         var name= x.name;
         document.getElementById("pos").innerText += " "+name;
-        console.log(x);
+        document.getElementById("current-icon").src = 'http://openweathermap.org/img/wn/'+x.weather[0].icon+'@2x.png' ;
+        document.getElementById("current-temp").innerText = x.main.temp;
     })
     var response = await getCityInfo('Roma');
     document.getElementById(`Roma-temp`).innerText = response.main.temp;
-    document.getElementById(`Roma-icon`).src='http://openweathermap.org/img/wn/'+response.weather[0].icon+'@2x.png' ;
+    document.getElementById(`Roma-icon`).src = 'http://openweathermap.org/img/wn/'+response.weather[0].icon+'@2x.png' ;
     
     response = await getCityInfo('Torino');
     document.getElementById(`Torino-temp`).innerText = response.main.temp;
-    document.getElementById(`Torino-icon`).src='http://openweathermap.org/img/wn/'+response.weather[0].icon+'@2x.png' ;
+    document.getElementById(`Torino-icon`).src = 'http://openweathermap.org/img/wn/'+response.weather[0].icon+'@2x.png' ;
     
     response = await getCityInfo('Milano');
     document.getElementById(`Milano-temp`).innerText = response.main.temp;
-    document.getElementById(`Milano-icon`).src='http://openweathermap.org/img/wn/'+response.weather[0].icon+'@2x.png' ;
+    document.getElementById(`Milano-icon`).src = 'http://openweathermap.org/img/wn/'+response.weather[0].icon+'@2x.png' ;
 });

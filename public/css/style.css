@@ -17,17 +17,15 @@
     text-align: center;
 }
 
-.pIcon{
-    margin-top:5%;
-}
-
 .icon{
-    height: 10%;
-    width: 10%;
+    height: 14%;
+    width: 14%;
+    display:inline-block;
 }
 
 .temp{
-    
+    font-size: 200%;
+    display:inline-block;
 }
 
 #currentPos{
