@@ -31,3 +31,14 @@
 #currentPos{
     text-align: center;
 }
+
+.info{
+    width: 100%;
+    text-align: center;
+    padding-left:30%;
+    padding-right:25%;
+}
+
+.dataweather{
+    padding-top: 3%;
+}
