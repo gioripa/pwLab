@@ -5,6 +5,7 @@
 #divDark{
     bottom:1rem;
     left:1rem;
+    z-index: 1;
 }
 
 .icon-img{
@@ -41,4 +42,8 @@
 
 .dataweather{
     padding-top: 3%;
+}
+
+#forecast{
+    padding-top: 2%
 }
