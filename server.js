@@ -19,6 +19,10 @@ app.get("/", (req, res) => {
     res.render("index.html");
 });
 
+app.get("/map", (req, res) => {
+    res.render("map.html");
+});
+
 app.listen(process.env.PORTA, () => {
     console.log("server avviato");
 });

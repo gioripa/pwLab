@@ -77,3 +77,12 @@
     padding-left: 15%;
     padding-right: 15%;
 }
+
+#map { 
+    margin-top: 10%;
+    height: 600px;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 2%;
+    z-index:0;
+}
