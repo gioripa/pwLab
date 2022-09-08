@@ -25,14 +25,13 @@ app.listen(process.env.PORTA, () => {
 
 app.post("/search", (req, res) => {
     var s = req.body.search;
-    //console.log(s);
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${s},it&appid=${api_key}&units=metric&lang=it`)
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${s},it&appid=${api_key}&units=metric&lang=it`)
         .then(info => {
-            //console.log(info);
-            return res.render('search',{weather:info.data,error:false});
+            console.log(info.data);
+            return res.render('search',{weather:info.data,error:null});
         })
         .catch(error => {
             console.log(error.message);
-            res.render('search',{weather:null,error:true})
+            res.render('search',{weather:null,error:"errore"})
         });
 });

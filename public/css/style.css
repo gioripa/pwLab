@@ -47,3 +47,33 @@
 #forecast{
     padding-top: 2%
 }
+
+#searchedCity{
+    text-align: center;
+    padding-top:5%; 
+}
+
+#search-icon{
+    height: 9%;
+    width: 9%;
+}
+
+#search-temp{
+    padding-top: 3%;
+    font-size: 250%;
+    display:inline-block;
+}
+
+#searched{
+    font-size: 370%;
+}
+
+#sInfo{
+    margin-top: 1%;
+}
+
+#sForecast{
+    margin-top: 1%;
+    padding-left: 15%;
+    padding-right: 15%;
+}
