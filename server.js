@@ -23,19 +23,65 @@ app.get("/map", (req, res) => {
     res.render("map.html");
 });
 
-app.listen(process.env.PORTA, () => {
-    console.log("server avviato");
-});
-
 app.post("/search", (req, res) => {
     var s = req.body.search;
         axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${s},it&appid=${api_key}&units=metric&lang=it`)
         .then(info => {
-            console.log(info.data);
             return res.render('search',{weather:info.data,error:null});
         })
         .catch(error => {
             console.log(error.message);
             res.render('search',{weather:null,error:"errore"})
         });
+});
+
+app.get("/getWeatherInfo", (req, res) => {
+    var latitude,longitude;
+    latitude=req.query.lat;
+    longitude=req.query.lon;
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${api_key}&units=metric`)
+        .then(info => {
+            return res.send(info.data);
+        })
+        .catch(error => {
+            console.log(error.message);
+        });
+});
+
+app.get("/getCityInfo", (req, res) => {
+    var name= req.query.name;
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${name},it&appid=${api_key}&units=metric&lang=it`)
+        .then(info => {
+            return res.send(info.data);
+        })
+        .catch(error => {
+            console.log(error.message);
+        });
+});
+
+app.get("/getForecast", (req, res) => {
+    var latitude,longitude;
+    latitude=req.query.lat;
+    longitude=req.query.lon;
+    axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${api_key}&cnt=5&units=metric&lang=it`)
+        .then(info => {
+            return res.send(info.data);
+        })
+        .catch(error => {
+            console.log(error.message);
+        });
+});
+
+
+
+
+
+
+
+
+
+
+
+app.listen(process.env.PORTA, () => {
+    console.log("server avviato");
 });

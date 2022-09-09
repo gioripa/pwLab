@@ -1,6 +1,3 @@
-
-const API = "40aa9efaf5c5149435908a060eb5baf9";
-
 const request = async url => {
     const response = await fetch(url);
     return response.ok ? response.json() : Promise.reject({ error: 500 });
@@ -9,7 +6,7 @@ const request = async url => {
 
 const getWeatherInfo = async (latitude, longitude) => {
     try {
-        const url = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&appid=' + API + '&units=metric';
+        const url =`/getWeatherInfo?lat=${latitude}&lon=${longitude}`;
         const response = await request(url);
         return response;
     } catch (err) {
@@ -19,7 +16,7 @@ const getWeatherInfo = async (latitude, longitude) => {
 
 const getCityInfo = async (name) => {
     try {
-        const url = `https://api.openweathermap.org/data/2.5/weather?q=${name},it&appid=${API}&units=metric&lang=it`;
+        const url = `/getCityInfo?name=${name}`;
         const response = await request(url);
         return response;
     } catch (err) {
@@ -27,9 +24,9 @@ const getCityInfo = async (name) => {
     }
 };
 
-const forecast = async (lat, lon) => {
+const forecast = async (latitude, longitude) => {
     try {
-        const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API}&cnt=5&units=metric&lang=it`;
+        const url = `/getForecast?lat=${latitude}&lon=${longitude}`;
         const response = await request(url);
         return response;
     } catch (err) {
