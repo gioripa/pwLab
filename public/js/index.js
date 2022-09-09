@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 const forecastDisplay = async (data) => {
     var d = document.getElementById("forecast");
-    console.log(data);
     var dim = data.cnt;
     var l = data.list;
     for (let i = 0; i < dim; i++) {
