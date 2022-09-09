@@ -19,6 +19,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 async function showData(latitude, longitude) {
     var x = await getWeatherInfo(latitude, longitude);
     console.log(x);
+    document.getElementById("selected").innerText = x.name; 
+    document.getElementById("selected-icon").src = 'http://openweathermap.org/img/wn/' + x.weather[0].icon + '@2x.png';
+    document.getElementById("selected-temp").innerText = Math.floor(x.main.temp) + "°C";
+    document.getElementById("sWindSpeed").innerText = x.wind.speed + " km/h"; 
+    document.getElementById("sHumidity").innerText = x.main.humidity + "%"; 
 }
 
 

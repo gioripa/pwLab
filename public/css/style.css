@@ -22,6 +22,7 @@
     height: 14%;
     width: 14%;
     display:inline-block;
+    border-right: 4%;
 }
 
 .temp{
@@ -83,6 +84,24 @@
     height: 600px;
     width: 100%;
     border-radius: 10px;
-    margin-bottom: 2%;
     z-index:0;
+}
+
+.weatherSelected{
+    text-align: center;
+    padding-top: 35%;
+    margin-left: 20%;
+}
+
+.selectInfo{
+    width: 100%;
+    text-align: center;
+    padding-left:20%;
+    padding-right:12%;
+    margin-top: 9%;
+}
+
+#selected{
+    margin-bottom: 9%;
+    font-size: 320%;
 }
